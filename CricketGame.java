@@ -14,8 +14,7 @@ public class CricketGame {
 		System.out.println("Rules for the game: ");
 		System.out.println("**Assume a book of 300 pages");
 		System.out.println("1. Player1 opens the book to read a page number(example 87)()Randomly Generated");
-		System.out.println(
-				"2. If the page number is 87->(87%7) (%7 results in score between 0-6) = 3 should be added to the score");
+		System.out.println("2. If the page number is 87->(87%7) (%7 results in score between 0-6) = 3 should be added to the score");
 		System.out.println("3. Player1 continues and keeps adding to the score until page number results in a 0 score");
 		System.out.println("4. Player2 starts the game and tries to beat the score of player1");
 		System.out.println("5. In case of a tie, check the number of turns(player with less number of turns winner)");
