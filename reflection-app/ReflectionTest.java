@@ -11,7 +11,6 @@ public class ReflectionTest {
 		String name;
 		name = args[0];
 		
-		//Class cls = Class.forName(name);
 		Reflection obj = new Reflection();
 		
 		obj.getMethods(Class.forName(name));
@@ -19,8 +18,7 @@ public class ReflectionTest {
 		}	
 		catch(ClassNotFoundException e) {
 			e.printStackTrace();
-		}
-			
+		}	
 		
 	}
 
