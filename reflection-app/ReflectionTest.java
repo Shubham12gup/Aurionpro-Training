@@ -8,18 +8,18 @@ public class ReflectionTest {
 
 	public static void main(String[] args) {
 		try {
-		String name;
-		name = args[0];
-		
-		Reflection obj = new Reflection();
-		
-		obj.getMethods(Class.forName(name));
-		obj.getFields(Class.forName(name));
-		}	
-		catch(ClassNotFoundException e) {
+			String name;
+			name = args[0];
+
+			Reflection obj = new Reflection();
+
+			obj.getMethods(Class.forName(name));
+			obj.getFields(Class.forName(name));
+		} 
+		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}	
-		
+		}
+
 	}
 
 }
