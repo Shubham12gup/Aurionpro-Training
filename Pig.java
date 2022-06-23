@@ -1,20 +1,43 @@
 package com.aurionpro.test;
 
-import java.util.*;
+import java.util.Random;
+import java.util.Scanner;
 
-public class Pig {
 
+public class PigDiceMultiplePlayer {
 	public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
 	public static final String ANSI_RESET = "\u001B[0m";
 	public static final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
 
 	public static void main(String[] args) {
-		System.out.println("PIG DICE GAME");
-		System.out.println("* See how many turns it takes you to get to 20");
-		System.out.println("* Turn ends when you hold or roll a 1");
-		System.out.println("* If you roll a 1, you lose all points for the turn");
-		System.out.println("* If you hold, you save all points for the turn\n");
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter Player1 Name: ");
+		String player1 = sc.next();
+		
+		System.out.print("Enter Player2 Name: ");
+		String player2 = sc.next();
+		
+		System.out.println("\nPlayer " +player1);
+		int player1Turns = playGame(player1);
+		
+		System.out.println("\nPlayer " +player2);
+		int player2Turns = playGame(player2);
+		
+		if(player1Turns == player2Turns){
+			System.out.println(" Match DRAW!!! ");
+		}
+		else if(player1Turns < player2Turns) {
+			System.out.println("🎉🎉🎉    " +player1+ " WINS 🎉🎉🎉");
+		}
+		else {
+			System.out.println("🎉🎉🎉    " +player2+ " WINS 🎉🎉🎉");
+		}
+		System.out.println("\n!!! Game Over !!! ");
+		
+		sc.close();
+	}
 
+	private static int playGame(String player) {
 		int score = 0, turns = 1, turnScore = 0;
 		Scanner sc = new Scanner(System.in);
 		System.out.println(ANSI_RED_BACKGROUND + "TURN " + turns + ANSI_RESET);
@@ -39,8 +62,7 @@ public class Pig {
 						} else {
 							System.out.println("Total score: " + turnScore + "\n");
 						}
-						System.out.println(ANSI_GREEN_BACKGROUND + "You finished in " + turns + " turns!\n" + ANSI_RESET);
-						System.out.println("Game Over!");
+						System.out.println(ANSI_GREEN_BACKGROUND + player + " finished in " + turns + " turns.\n" + ANSI_RESET);
 						break;
 					}
 				} else {
@@ -55,8 +77,7 @@ public class Pig {
 				score = score + turnScore;
 				if (score >= 20) {
 					System.out.println("Total score: " + score + "\n");
-					System.out.println(ANSI_GREEN_BACKGROUND + "You finished in " + turns + " turns!\n" + ANSI_RESET);
-					System.out.println("Game Over!");
+					System.out.println(ANSI_GREEN_BACKGROUND + player + " finished in " + turns + " turns.\n" + ANSI_RESET);
 					break;
 				} else {
 					System.out.println("Score for turn " + turns + ": " + turnScore);
@@ -72,7 +93,6 @@ public class Pig {
 			}
 
 		}
-		sc.close();
+		return turns;
 	}
-
 }
