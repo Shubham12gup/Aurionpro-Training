@@ -10,7 +10,7 @@ public class TicTacTest {
 
 	public static void main(String args[]) {
 		boolean b[][] = { { false, false, false }, { false, false, false }, { false, false, false } };
-		String a[][] = { { "00", "01", "02" }, { "10", "11", "12" }, { "20", "21", "22" } };
+		String a[][] = { { "11", "12", "13" }, { "21", "22", "23" }, { "31", "32", "33" } };
 		displayGrid(a);
 		boolean win = true;
 		int turns = 1;
@@ -21,17 +21,17 @@ public class TicTacTest {
 			String input;
 			if (turns % 2 != 0) {
 				turns++;
-				System.out.print("Player X enter your move(ROW-COLUMN): ");
+				System.out.print("Player X enter your move(ROW[1-3]-COLUMN[1-3]): ");
 				String inputPosition[] = sc.nextLine().split("");
-				row = Integer.parseInt(inputPosition[0]);
-				col = Integer.parseInt(inputPosition[1]);
+				row = Integer.parseInt(inputPosition[0])-1;
+				col = Integer.parseInt(inputPosition[1])-1;
 				input = " X";
 			} else {
 				turns++;
-				System.out.print("Player O enter your move(ROW-COLUMN): ");
+				System.out.print("Player O enter your move(ROW[1-3]-COLUMN[1-3]): ");
 				String inputPosition[] = sc.nextLine().split("");
-				row = Integer.parseInt(inputPosition[0]);
-				col = Integer.parseInt(inputPosition[1]);
+				row = Integer.parseInt(inputPosition[0])-1;
+				col = Integer.parseInt(inputPosition[1])-1;
 				input = " O";
 			}
 
