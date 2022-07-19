@@ -1,13 +1,11 @@
 package com.aurionpro.test;
 
-
 import java.util.Arrays;
 import java.util.List;
 
 import com.aurionpro.model.CustomLinkedList;
 
 public class CustomLinkedListTest {
-
 	
 	public static void main(String[] args) {
 		CustomLinkedList list = new CustomLinkedList();
@@ -23,6 +21,7 @@ public class CustomLinkedListTest {
 		System.out.println("-----Inserting node at given index -----");
 		list.insertNodeAt(3, 50);
 		list.display();
+		System.out.println("----------------------------------------");
 		
 		System.out.println("-----Removing particular value-----");
 		list.remove(50);
